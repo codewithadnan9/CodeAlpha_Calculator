@@ -1,0 +1,131 @@
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+        :root {
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --secondary: #4b5563;
+            --secondary-hover: #374151;
+            --danger: #ef4444;
+            --danger-hover: #dc2626;
+            --success: #10b981;
+            --success-hover: #059669;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            background-image: url(calc.jpg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .calculator {
+            width: 320px;
+            background-color: rgb(238, 238, 238);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .display {
+            background-color: #1e293b;
+            color: white;
+            padding: 1.5rem;
+            text-align: right;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .previous-operand {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            word-wrap: break-word;
+        }
+
+        .current-operand {
+            font-size: 2.5rem;
+            font-weight: 500;
+            word-wrap: break-word;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            height: 400px;
+            background-color: #e5e7eb;
+        }
+
+        button {
+            border: none;
+            outline: none;
+            padding: 1.25rem;
+            font-size: 1.25rem;
+            cursor: pointer;
+            background-color: white;
+            transition: all 0.2s;
+        }
+
+        button:hover {
+            background-color: #f3f4f6;
+        }
+
+        .operator {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .operator:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .equals {
+            background-color: var(--success);
+            color: white;
+            grid-column: span 1;
+        }
+
+        .equals:hover {
+            background-color: var(--success-hover);
+        }
+
+        .clear {
+            background-color: var(--danger);
+            color: white;
+        }
+
+        .clear:hover {
+            background-color: var(--danger-hover);
+        }
+
+        .decimal,
+        .backspace {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .decimal:hover,
+        .backspace:hover {
+            background-color: var(--secondary-hover);
+        }
+
+        @media (max-width: 360px) {
+            .calculator {
+                width: 100%;
+                border-radius: 0;
+            }
+        }
+
+        /* Active button effect */
+        button:active {
+            transform: scale(0.95);
+        }
+
+        /* Focus outline for accessibility */
+        button:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
